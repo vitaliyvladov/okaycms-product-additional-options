@@ -1,0 +1,89 @@
+{
+  "version": "1.0.1",
+  "vendor": {
+    "email": "vitaliyvladov@gmail.com",
+    "site": "https://okay-cms.com"
+  },
+  "modifications": {
+    "front": [
+      {
+        "file": "product.tpl",
+        "changes": [
+          {
+            "find": "dropDownSelect2",
+            "closestFind": "fn_variants",
+            "appendAfter": "{get_design_block block=\"front_product_additional_option\"}"
+          }
+        ]
+      },
+      {
+        "file": "cart_purchases.tpl",
+        "changes": [
+          {
+            "find": "{$purchase->variant->name|escape}",
+            "appendAfter": "{if !empty($purchase->meta->additional_option)} | {$purchase->meta->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      },
+      {
+        "file": "pop_up_cart.tpl",
+        "changes": [
+          {
+            "find": "{$purchase->variant->name|escape}",
+            "appendAfter": "{if !empty($purchase->meta->additional_option)} | {$purchase->meta->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      },
+      {
+        "file": "order.tpl",
+        "changes": [
+          {
+            "find": "purchase__name",
+            "childrenFind": "{$purchase->variant_name|escape}",
+            "appendAfter": "{if !empty($purchase->additional_option)} | {$purchase->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      },
+      {
+        "file": "email/email_order.tpl",
+        "changes": [
+          {
+            "find": "{$purchase->variant_name|escape}",
+            "appendAfter": "{if !empty($purchase->additional_option)} | {$purchase->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      }
+    ],
+    "backend": [
+      {
+        "file": "orders.tpl",
+        "changes": [
+          {
+            "find": "purchase__name",
+            "childrenFind": "{$purchase->variant_name|escape}",
+            "appendAfter": "{if !empty($purchase->additional_option)} | {$purchase->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      },
+      {
+        "file": "order.tpl",
+        "changes": [
+          {
+            "find": "{$purchase->variant_name|escape}",
+            "appendAfter": "{if !empty($purchase->additional_option)} | {$purchase->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      },
+      {
+        "file": "email/email_order_admin.tpl",
+        "changes": [
+          {
+            "find": "{$purchase->variant_name|escape}",
+            "appendAfter": "{if !empty($purchase->additional_option)} | {$purchase->additional_option->value_name|escape}{/if}"
+          }
+        ]
+      }
+    ]
+  }
+}
+

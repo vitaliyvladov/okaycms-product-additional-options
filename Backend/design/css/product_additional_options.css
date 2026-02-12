@@ -1,0 +1,22 @@
+/* Вирівнювання прапорців по центру */
+.wrap_flag {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.wrap_flag img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.heading_label.mb-h {
+    display: flex;
+    align-items: center;
+}
+
+.heading_label.mb-h .wrap_flag {
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+

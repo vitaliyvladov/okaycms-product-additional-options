@@ -1,0 +1,12 @@
+<svg width="55" height="55" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="55" height="55" fill="#209db0"/>
+  
+  <!-- Білий квадрат з рамкою -->
+  <rect x="10" y="10" width="35" height="35" fill="white" stroke="#209db0" stroke-width="2"/>
+  
+  <!-- Галочки (опції) -->
+  <path d="M 18 25 L 22 29 L 30 21" stroke="#209db0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 18 33 L 22 37 L 30 29" stroke="#209db0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
